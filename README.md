@@ -37,7 +37,7 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 ## 2. Caravel Flow
 The below instructions show Caravel flow setup and execution with GCD RTL design example. If a volare package is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 
- # setup caravel_user_project
+ '# setup caravel_user_project
  $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
  $ cd caravel_user_project
  $ mkdir dependencies
