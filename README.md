@@ -39,6 +39,7 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
 * If a 'volare exe not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
+* We change default "RUN_CVC" : 1 to 0 in [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 
 Each Caravel flow step outputs written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
@@ -82,9 +83,7 @@ Log files
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
 * [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
 * [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
-* [verify-la_test1-gl](https://github.com/bol-edu/caravel-lab/blob/main/logs/verify-la_test1-gl.log)
-* [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
 
-## Documents
+## Offical Documents
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
 * [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc)
