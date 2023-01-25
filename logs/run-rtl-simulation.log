@@ -1,0 +1,62 @@
+hls05@HLS05:~$ cp ~/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+hls05@HLS05:~$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+hls05@HLS05:~$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
+hls05@HLS05:~$ cd caravel_user_project/
+hls05@HLS05:~/caravel_user_project$ make simenv
+docker pull efabless/dv:latest
+latest: Pulling from efabless/dv
+2d473b07cdd5: Already exists
+830c1c11556a: Pull complete
+27a216299a6b: Pull complete
+361aa2410f76: Pull complete
+c386cf4c16f0: Pull complete
+d83a09629f53: Pull complete
+7669d5be8d83: Pull complete
+c9721db1c856: Pull complete
+70046bb76055: Pull complete
+Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
+Status: Downloaded newer image for efabless/dv:latest
+docker.io/efabless/dv:latest
+hls05@HLS05:~/caravel_user_project$ SIM=RTL
+hls05@HLS05:~/caravel_user_project$ make verify-la_test1-rtl
+docker pull efabless/dv:latest
+latest: Pulling from efabless/dv
+Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
+Status: Image is up to date for efabless/dv:latest
+docker.io/efabless/dv:latest
+docker run -v /home/hls05/caravel_user_project:/home/hls05/caravel_user_project -v /home/hls05/caravel_user_project/dependencies/pdks:/home/hls05/caravel_user_project/dependencies/pdks -v /home/hls05/caravel_user_project/caravel:/home/hls05/caravel_user_project/caravel -e TARGET_PATH=/home/hls05/caravel_user_project -e PDK_ROOT=/home/hls05/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/home/hls05/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/home/hls05/caravel_user_project -e USER_PROJECT_VERILOG=/home/hls05/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/home/hls05/caravel_user_project/caravel/verilog -e MCW_ROOT=/home/hls05/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /home/hls05/caravel_user_project/verilog/dv/la_test1 && export SIM=RTL && make"
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-gcc -g \
+-I/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware \
+-I/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/generated \
+-I/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/ \
+-I/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/common \
+  -march=rv32i      -mabi=ilp32 -D__vexriscv__ \
+-Wl,-Bstatic,-T,/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/sections.lds,--strip-debug \
+-ffreestanding -nostdlib -o la_test1.elf /home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/dv/firmware/isr.c la_test1.c
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objcopy -O verilog la_test1.elf la_test1.hex
+# to fix flash base address
+sed -ie 's/@10/@00/g' la_test1.hex
+iverilog -Ttyp -DFUNCTIONAL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+        -f/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.rtl.caravel \
+        -f/home/hls05/caravel_user_project/verilog/includes/includes.rtl.caravel_user_project -o la_test1.vvp la_test1_tb.v
+/home/hls05/caravel_user_project/caravel/verilog/rtl/caravel.v:363: warning: input port clock is coerced to inout.
+vvp  la_test1.vvp
+Reading la_test1.hex
+la_test1.hex loaded into memory
+Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
+FST info: dumpfile la_test1.vcd opened for output.
+LA Test seq_gcd(10312050, 29460792)=138 started
+LA Test seq_gcd(10312050, 29460792)=138 passed
+LA Test seq_gcd(1993627629, 1177417612)=7 started
+LA Test seq_gcd(1993627629, 1177417612)=7 passed
+LA Test seq_gcd(2097015289, 3812041926)=1 started
+LA Test seq_gcd(2097015289, 3812041926)=1 passed
+LA Test seq_gcd(1924134885, 3151131255)=135 started
+LA Test seq_gcd(1924134885, 3151131255)=135 passed
+LA Test seq_gcd(992211318, 512609597)=1 started
+LA Test seq_gcd(992211318, 512609597)=1 passed
+la_test1_tb.v:189: $finish called at 2569612500 (1ps)
+mv la_test1.vcd RTL-la_test1.vcd
+/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937/bin/riscv32-unknown-linux-gnu-objdump -d -S la_test1.elf > la_test1.lst
+rm la_test1.elf la_test1.vvp
+hls05@HLS05:~/caravel_user_project$
