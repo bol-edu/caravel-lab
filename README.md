@@ -81,6 +81,7 @@ Each Caravel flow step outputs written to [logs](https://github.com/bol-edu/cara
 Log files
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
 * [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
+* [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
 * [verify-la_test1-gl](https://github.com/bol-edu/caravel-lab/blob/main/logs/verify-la_test1-gl.log)
 * [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
 
