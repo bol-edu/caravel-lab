@@ -20,7 +20,7 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
 
 <img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>
 
-    $ iverilog design.v testbench.v  && vvp a.out
+    $ iverilog seq_gcd.v testbench.v  && vvp a.out
     VCD info: dumpfile dump.vcd opened for output.
                  Result is correct:  GCD(  10312050,  29460792) -->: Expected =        138; Actual Result =        138
                  Result is correct:  GCD(1993627629,1177417612) -->: Expected =          7; Actual Result =          7
@@ -32,4 +32,4 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
     ** Flushing output streams.
     ** Current simulation time is 609 ticks.
     
-The GCD design and testbench sources located in [/custom_design/gcd/source/]([custom_design/gcd/source/](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested individual Openlane flow with PDK sky130_fd_sc_hd and clock period 80 ns.
+The GCD design and testbench sources located in [custom_design/gcd/source/](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns. In Caravel lab, we integrate GCD design into [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v) with SoC wrapper and write an user project example's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) used in Caravel flow.  
