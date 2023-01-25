@@ -44,9 +44,6 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
 
 All Caravel flow step outputs were written to log files.
-* [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
-* [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
-* [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
@@ -82,7 +79,12 @@ All Caravel flow step outputs were written to log files.
     
     Run MPW precheck
     $ make precheck
-    $ make run-precheck    
+    $ make run-precheck
+
+Log files
+* [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
+* [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
+* [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
 
 ## Offical Documents
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
