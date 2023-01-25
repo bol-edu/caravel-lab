@@ -38,6 +38,20 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 The below instructions show Caravel flow setup and execution with GCD RTL design example. 
 * If a 'volare exe not found' is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
+
+    $ iverilog seq_gcd.v testbench.v  && vvp a.out
+    VCD info: dumpfile dump.vcd opened for output.
+                 Result is correct:  GCD(  10312050,  29460792) -->: Expected =        138; Actual Result =        138
+                 Result is correct:  GCD(1993627629,1177417612) -->: Expected =          7; Actual Result =          7
+                 Result is correct:  GCD(2097015289,3812041926) -->: Expected =          1; Actual Result =          1
+                 Result is correct:  GCD(1924134885,3151131255) -->: Expected =        135; Actual Result =        135
+                 Result is correct:  GCD( 992211318, 512609597) -->: Expected =          1; Actual Result =          1
+    testbench.v:100: $stop called at 609 (1s)
+    ** VVP Stop(0) **
+    ** Flushing output streams.
+    ** Current simulation time is 609 ticks.
+    > finish
+    ** Continue **
     
      Setup caravel_user_project    
      $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
