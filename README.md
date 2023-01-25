@@ -37,19 +37,19 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 ## 2. Caravel Flow
 The below instructions show Caravel flow setup and execution with GCD RTL design example. If a volare package is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 
- Setup caravel_user_project
- $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
- $ cd caravel_user_project
- $ mkdir dependencies
- $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
- $ export PDK_ROOT=$(pwd)/dependencies/pdks
- $ export PDK=sky130A
- $ make setup
+    Setup caravel_user_project
+    $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
+    $ cd caravel_user_project
+    $ mkdir dependencies
+    $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
+    $ export PDK_ROOT=$(pwd)/dependencies/pdks
+    $ export PDK=sky130A
+    $ make setup
  
- Run Openlane to generate RTL netlist
- $ cd openlane
- $ make user_proj_example
- $ make user_project_wrapper
+    Run Openlane to generate RTL netlist
+    $ cd openlane
+    $ make user_proj_example
+    $ make user_project_wrapper
 
 ## Documents
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
