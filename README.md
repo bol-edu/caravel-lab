@@ -42,7 +42,7 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
 * We change default "RUN_CVC" : 1 to 0 in [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 
-Each Caravel flow step outputs written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
+Caravel flow step outputs were written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
