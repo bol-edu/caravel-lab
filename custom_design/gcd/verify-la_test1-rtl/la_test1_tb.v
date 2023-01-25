@@ -19,7 +19,7 @@
 
 module la_test1_tb;
 	reg clock;
-    reg RSTB;
+        reg RSTB;
 	reg CSB;
 
 	reg power1, power2;
