@@ -68,7 +68,9 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
     Run MPW precheck
     $ make precheck
     $ make run-precheck
-    [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
+    
+Log files
+** [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
 
 ## Documents
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
