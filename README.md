@@ -41,9 +41,9 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 * The GCD design was wrapped with logic analyzer input/output in [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v), which can be triggered by [la_test1.c](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1.c) and monitored by [la_test1_tb.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v).
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
-* We change default "RUN_CVC" : 1 to 0 in [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
+* We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
 
-Caravel flow step outputs were written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
+Caravel flow step outputs were written to [logs](user project example's https://github.com/bol-edu/caravel-lab/tree/main/logs).
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
