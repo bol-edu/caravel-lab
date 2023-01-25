@@ -1,0 +1,31 @@
+hls05@HLS05:~/caravel_user_project$ SIM=GL
+hls05@HLS05:~/caravel_user_project$ make verify-la_test1-gl
+docker pull efabless/dv:latest
+latest: Pulling from efabless/dv
+Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
+Status: Image is up to date for efabless/dv:latest
+docker.io/efabless/dv:latest
+docker run -v /home/hls05/caravel_user_project:/home/hls05/caravel_user_project -v /home/hls05/caravel_user_project/dependencies/pdks:/home/hls05/caravel_user_project/dependencies/pdks -v /home/hls05/caravel_user_project/caravel:/home/hls05/caravel_user_project/caravel -e TARGET_PATH=/home/hls05/caravel_user_project -e PDK_ROOT=/home/hls05/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/home/hls05/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/home/hls05/caravel_user_project -e USER_PROJECT_VERILOG=/home/hls05/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/home/hls05/caravel_user_project/caravel/verilog -e MCW_ROOT=/home/hls05/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /home/hls05/caravel_user_project/verilog/dv/la_test1 && export SIM=GL && make"
+iverilog -Ttyp -DFUNCTIONAL -DGL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
+        -f/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.gl.caravel \
+        -f/home/hls05/caravel_user_project/verilog/includes/includes.gl.caravel_user_project -o la_test1.vvp la_test1_tb.v
+/home/hls05/caravel_user_project/caravel/verilog/gl/caravel.v:4988: warning: input port clock is coerced to inout.
+vvp  la_test1.vvp
+Reading la_test1.hex
+la_test1.hex loaded into memory
+Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
+FST info: dumpfile la_test1.vcd opened for output.
+LA Test seq_gcd(10312050, 29460792)=138 started
+LA Test seq_gcd(10312050, 29460792)=138 passed
+LA Test seq_gcd(1993627629, 1177417612)=7 started
+LA Test seq_gcd(1993627629, 1177417612)=7 passed
+LA Test seq_gcd(2097015289, 3812041926)=1 started
+LA Test seq_gcd(2097015289, 3812041926)=1 passed
+LA Test seq_gcd(1924134885, 3151131255)=135 started
+LA Test seq_gcd(1924134885, 3151131255)=135 passed
+LA Test seq_gcd(992211318, 512609597)=1 started
+LA Test seq_gcd(992211318, 512609597)=1 passed
+la_test1_tb.v:189: $finish called at 2569614500 (1ps)
+mv la_test1.vcd GL-la_test1.vcd
+rm la_test1.vvp
+hls05@HLS05:~/caravel_user_project$ 
