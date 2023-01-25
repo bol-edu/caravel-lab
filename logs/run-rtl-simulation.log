@@ -1,7 +1,6 @@
-hls05@HLS05:~$ cp ~/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
-hls05@HLS05:~$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
-hls05@HLS05:~$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
-hls05@HLS05:~$ cd caravel_user_project/
+hls05@HLS05:~/caravel_user_project$ cp ~/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+hls05@HLS05:~/caravel_user_project$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+hls05@HLS05:~/caravel_user_project$ cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
 hls05@HLS05:~/caravel_user_project$ make simenv
 docker pull efabless/dv:latest
 latest: Pulling from efabless/dv
