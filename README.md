@@ -36,8 +36,9 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 
 ## 2. Caravel Flow
 The below instructions show Caravel flow setup and execution with GCD RTL design example. 
-* If a 'volare exe not found' is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
+* If a 'volare exe not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
+* Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 
 Run each step of Caravel flow
     
@@ -51,9 +52,9 @@ Run each step of Caravel flow
     $ make setup
     
     Run RTL simulation
-    # cp custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
-    # cp custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
-    # cp custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
+    # cp ~/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+    # cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+    # cp ~/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
     $ make simenv
     $ SIM=RTL
     $ make verify-la_test1-rtl
@@ -78,6 +79,7 @@ Run each step of Caravel flow
     
 Log files
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
+* [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
 * [verify-la_test1-gl](https://github.com/bol-edu/caravel-lab/blob/main/logs/verify-la_test1-gl.log)
 * [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
 
