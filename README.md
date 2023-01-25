@@ -47,6 +47,9 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
     $ make setup
     
     Run RTL simulation
+    # cp custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+    # cp custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+    # cp custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
     $ make simenv
     $ SIM=RTL
     $ make verify-la_test1-rtl
