@@ -25,10 +25,12 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
                  Result is correct:  GCD(2097015289,3812041926) -->: Expected =          1; Actual Result =          1
                  Result is correct:  GCD(1924134885,3151131255) -->: Expected =        135; Actual Result =        135
                  Result is correct:  GCD( 992211318, 512609597) -->: Expected =          1; Actual Result =          1
-    testbench.v:101: $stop called at 609 (1s)
+    testbench.v:100: $stop called at 609 (1s)
     ** VVP Stop(0) **
     ** Flushing output streams.
     ** Current simulation time is 609 ticks.
+    > finish
+    ** Continue **
     
 The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns. In Caravel lab, we integrate GCD design into [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v) with SoC wrapper and write an user project example's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) used in Caravel flow.
 
