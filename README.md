@@ -39,8 +39,9 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
 * If a 'volare exe not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
+* Caravel SoC [Memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and testbench examples(https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 
-Run each step of Caravel flow
+Each Caravel flow step outputs written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
