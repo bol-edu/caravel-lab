@@ -35,7 +35,7 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
 The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns. In Caravel lab, we integrate GCD design into [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v) with SoC wrapper and write an user project example's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) used in Caravel flow.
 
 ## 2. Caravel Flow
-The below instructions show Caravel flow setup and execution with GCD RTL design example. If a volare exe not found is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
+The below instructions show Caravel flow setup and execution with GCD RTL design example. If a 'volare exe not found' is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 
     Setup caravel_user_project
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
