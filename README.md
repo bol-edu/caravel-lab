@@ -1,7 +1,5 @@
 # Introduction to Efabless Caravel
-Caravel is a template SoC for Efabless Open MPW and chipIgnite shuttles based on the Sky130 node from SkyWater Technologies.
-* [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
-* [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc)
+The Efabless Caravel chip is a ready-to-use test harness for creating designs with the Google/Skywater 130nm Open PDK. The Caravel harness comprises of base functions supporting IO, power and configuration as well as drop-in modules for a management SoC core. The current SoC architecture is given below.
 
 <img src="https://user-images.githubusercontent.com/11850122/214560743-cbad9de0-db4c-4ab1-9a0a-cc52d51191dd.jpg" width=120%>
 
@@ -32,4 +30,8 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
     ** Flushing output streams.
     ** Current simulation time is 609 ticks.
     
-The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns. In Caravel lab, we integrate GCD design into [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v) with SoC wrapper and write an user project example's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) used in Caravel flow.  
+The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns. In Caravel lab, we integrate GCD design into [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v) with SoC wrapper and write an user project example's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) used in Caravel flow.
+
+## Documents
+* [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
+* [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc)
