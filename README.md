@@ -70,7 +70,7 @@ Caravel flow step outputs were written to [logs](https://github.com/bol-edu/cara
     
     Run gate level simulation (it will take hours)
     $ SIM=GL    
-    $ make verify-la_test1-rtl
+    $ make verify-la_test1-gl
     
     Run extract parasitics
     $ make extract-parasitics
