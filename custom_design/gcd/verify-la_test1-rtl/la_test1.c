@@ -32,8 +32,8 @@
 void main()
 {
 	int a[5];
-    int b[5];
-    int expect[5];
+        int b[5];
+        int expect[5];
 	int i;
 
 	/* Set up the housekeeping SPI to be connected internally so	*/
@@ -100,31 +100,31 @@ void main()
 	// reg_uart_clkdiv = 625;
 	reg_uart_enable = 1;
 
-    // Now, apply the configuration
-    reg_mprj_xfer = 1;
-    while (reg_mprj_xfer == 1);
+        // Now, apply the configuration
+        reg_mprj_xfer = 1;
+        while (reg_mprj_xfer == 1);
 	
 	a[0] = 10312050;
-    b[0] = 29460792;
-    expect[0] = 138;
+        b[0] = 29460792;
+        expect[0] = 138;
 	
 	a[1] = 1993627629;
-    b[1] = 1177417612;
-    expect[1] = 7;
+        b[1] = 1177417612;
+        expect[1] = 7;
 	
 	a[2] = 2097015289;
-    b[2] = 3812041926;
-    expect[2] = 1;
+        b[2] = 3812041926;
+        expect[2] = 1;
 	
 	a[3] = 1924134885;
-    b[3] = 3151131255;
-    expect[3] = 135;
+        b[3] = 3151131255;
+        expect[3] = 135;
 	
 	a[4] = 992211318;
-    b[4] = 512609597;
-    expect[4] = 1;
+        b[4] = 512609597;
+        expect[4] = 1;
 	
-    for(i = 0; i < 5; i = i + 1) {
+        for(i = 0; i < 5; i = i + 1) {
 		
 	  // Set seq_gcd(a, b) to la_data_in
 	  reg_la0_data = a[i];
