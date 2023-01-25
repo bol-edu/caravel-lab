@@ -67,7 +67,7 @@ Caravel flow step outputs were written to [logs](https://github.com/bol-edu/cara
     $ make user_proj_example
     $ make user_project_wrapper
     
-    Run gate-level simulation (it will take hours)
+    Run gate level simulation (it will take hours)
     $ SIM=GL    
     $ make verify-la_test1-rtl
     
