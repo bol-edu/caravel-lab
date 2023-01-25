@@ -115,8 +115,8 @@ module user_proj_example #(
         //.wdata(wbs_dat_i),
         //.wstrb(wstrb),
         .la_write_a(la_write_a),
-		.la_write_b(la_write_b),
-		.a_i(la_data_in[31:0]),
+	.la_write_b(la_write_b),
+	.a_i(la_data_in[31:0]),
         .b_i(la_data_in[63:32]),
         .gcd_o(gcd_o)		
     );	
@@ -128,8 +128,8 @@ module seq_gcd (
         clk,
         rst_n,
         load_i,
-		la_write_a,
-		la_write_b,
+	la_write_a,
+	la_write_b,
         a_i,
         b_i,
         gcd_o,
@@ -138,8 +138,8 @@ module seq_gcd (
         input wire clk;
         input wire rst_n;
         input wire load_i;
-		input wire [31:0] la_write_a;
-		input wire [31:0] la_write_b;
+	input wire [31:0] la_write_a;
+	input wire [31:0] la_write_b;
         input wire [31:0] a_i;
         input wire [31:0] b_i;
         output reg [31:0] gcd_o;
@@ -148,7 +148,7 @@ module seq_gcd (
         reg [31:0] b_q;
         wire [31:0] a_muxed;
         wire [31:0] b_muxed;
-		wire la_load;
+	wire la_load;
         reg CS;
         reg NS;
         reg load_int;
@@ -156,16 +156,16 @@ module seq_gcd (
                 if (~rst_n) begin
                         a_q <= 0;
                         b_q <= 0;
-						gcd_o <= 0;
+			gcd_o <= 0;
                 end
                 else begin
                         a_q <= a_muxed;
                         b_q <= b_muxed;
-						if (done_o) gcd_o <= a_q;
+			if (done_o) gcd_o <= a_q;
                 end
         end
         //assign gcd_o = a_q;
-		assign la_load = (&la_write_a)&(&la_write_b);
+	assign la_load = (&la_write_a)&(&la_write_b);
         assign a_muxed = (load_int ? a_i : b_q);
         assign b_muxed = (load_int ? b_i : a_q % b_q);		
         always @(posedge clk or negedge rst_n) begin : proc_update_state
