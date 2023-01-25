@@ -43,7 +43,7 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 * We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip Openlane CVC step.
 
-Caravel flow step outputs were written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
+All Caravel flow step outputs were written to [logs](https://github.com/bol-edu/caravel-lab/tree/main/logs).
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
