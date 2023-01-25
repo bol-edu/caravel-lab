@@ -39,54 +39,42 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
 * If a 'volare exe not found' is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
 
-    $ iverilog seq_gcd.v testbench.v  && vvp a.out
-    VCD info: dumpfile dump.vcd opened for output.
-                 Result is correct:  GCD(  10312050,  29460792) -->: Expected =        138; Actual Result =        138
-                 Result is correct:  GCD(1993627629,1177417612) -->: Expected =          7; Actual Result =          7
-                 Result is correct:  GCD(2097015289,3812041926) -->: Expected =          1; Actual Result =          1
-                 Result is correct:  GCD(1924134885,3151131255) -->: Expected =        135; Actual Result =        135
-                 Result is correct:  GCD( 992211318, 512609597) -->: Expected =          1; Actual Result =          1
-    testbench.v:100: $stop called at 609 (1s)
-    ** VVP Stop(0) **
-    ** Flushing output streams.
-    ** Current simulation time is 609 ticks.
-    > finish
-    ** Continue **
+Run each step of Caravel flow
     
-     Setup caravel_user_project    
-     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
-     $ cd caravel_user_project
-     $ mkdir dependencies
-     $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
-     $ export PDK_ROOT=$(pwd)/dependencies/pdks
-     $ export PDK=sky130A
-     $ make setup
+    Setup caravel_user_project    
+    $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
+    $ cd caravel_user_project
+    $ mkdir dependencies
+    $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
+    $ export PDK_ROOT=$(pwd)/dependencies/pdks
+    $ export PDK=sky130A
+    $ make setup
     
-     Run RTL simulation
-     # cp custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
-     # cp custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
-     # cp custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
-     $ make simenv
-     $ SIM=RTL
-     $ make verify-la_test1-rtl
+    Run RTL simulation
+    # cp custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+    # cp custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+    # cp custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
+    $ make simenv
+    $ SIM=RTL
+    $ make verify-la_test1-rtl
     
-     Run Openlane to generate RTL netlist
-     $ cd openlane
-     $ make user_proj_example
-     $ make user_project_wrapper
+    Run Openlane to generate RTL netlist
+    $ cd openlane
+    $ make user_proj_example
+    $ make user_project_wrapper
     
-     Run gate-level simulation (it will take hours)
-     $ SIM=GL    
-     $ make verify-la_test1-rtl
+    Run gate-level simulation (it will take hours)
+    $ SIM=GL    
+    $ make verify-la_test1-rtl
     
-     Run extract parasitics
-     $ make extract-parasitics
-     $ make create-spef-mapping
-     $ make caravel-sta
+    Run extract parasitics
+    $ make extract-parasitics
+    $ make create-spef-mapping
+    $ make caravel-sta
     
-     Run MPW precheck
-     $ make precheck
-     $ make run-precheck
+    Run MPW precheck
+    $ make precheck
+    $ make run-precheck
     
 Log files
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
