@@ -1,5 +1,5 @@
 # Introduction to Efabless Caravel
-Caravel is a template SoC for Efabless Open MPW and chipIgnite shuttles based on the Sky130 node from SkyWater Technologies. The current SoC architecture is given below.
+Caravel is a template SoC for Efabless Open MPW and chipIgnite shuttles based on the Sky130 node from SkyWater Technologies.
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
 * [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc)
 
@@ -12,11 +12,11 @@ Caravel is a template SoC for Efabless Open MPW and chipIgnite shuttles based on
 ## Caravel Lab Prerequisites
 * Ubuntu 20.04+
 * Installed Docker packages
-* [Icarus Verilog version 12.0](https://bleyer.org/icarus/)
+* Icarus Verilog [version 12.0](https://bleyer.org/icarus/)
 * Caravel user project sources with [tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
 
 ## 1. Custom RTL design
-A GCD RTL design example was verified under Icarus Verilog version 12.0. The the following timing diagram shows GCD(10312050,29460792)=138.
+A GCD RTL design example was verified under Icarus Verilog version 12.0. The the following timing diagram shows GCD(10312050, 29460792) = 138.
 
 <img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>
 
