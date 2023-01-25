@@ -70,6 +70,7 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
     $ make run-precheck
     
 Log files
+* [verify-la_test1-gl](https://github.com/bol-edu/caravel-lab/blob/main/logs/verify-la_test1-gl.log)
 * [run-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-precheck.log)
 
 ## Documents
