@@ -39,7 +39,7 @@ The below instructions show Caravel flow setup and execution with GCD RTL design
 * If a 'volare exe not found' is happened, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to set in Caravel flow execution.
 
-    Setup caravel_user_project
+    Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
     $ cd caravel_user_project
     $ mkdir dependencies
