@@ -31,3 +31,5 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
     ** VVP Stop(0) **
     ** Flushing output streams.
     ** Current simulation time is 609 ticks.
+    
+The GCD design and testbench sources located in [/custom_design/gcd/source/]([custom_design/gcd/source/](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source)). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested individual Openlane flow with PDK sky130_fd_sc_hd and clock period 80 ns.
