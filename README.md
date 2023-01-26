@@ -10,7 +10,7 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 ## Caravel Lab Prerequisites
 * Ubuntu 20.04+
 * Installed Docker packages
-* Icarus Verilog [version 12.0](https://bleyer.org/icarus/) bundle with GTKWave
+* Icarus Verilog [version 12.0](https://bleyer.org/icarus/) bundled with GTKWave
 * Caravel user project [sources with tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
 * Custom design [sources](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/)
 
