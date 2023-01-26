@@ -37,7 +37,7 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 ## 2. Caravel Flow
 The below instructions show Caravel flow setup and execution step-by-step with custom GCD RTL design example. 
 * If a 'volare: command not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
-* The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel flow execution. In lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
+* The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to exported before Caravel flow execution. In lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 * The GCD design was wrapped with logic analyzer input/output in [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v), which can be triggered by [la_test1.c](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1.c) and monitored by [la_test1_tb.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v).
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
