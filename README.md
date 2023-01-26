@@ -43,6 +43,7 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 * We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip not working Openlane CVC step in Caravel flow.
 * The gate level static timing verifier is based on [OpenROAD OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA).
+* In MPW precheck, you must have to update two files to pass check (1) update README.md (>25% difference) to replace original one (2) change 13'hXXXX to 13'h0000 in user_defines.v.
 
 All Caravel flow step outputs were written to log files.
     
@@ -80,6 +81,7 @@ All Caravel flow step outputs were written to log files.
     $ make caravel-sta
     
     Run MPW precheck
+    $ cp ~/custom_design/gcd/mpw_precheck/README.md ~/caravel_user_project/README.md
     $ make precheck
     $ make run-precheck
 
