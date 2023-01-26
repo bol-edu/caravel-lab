@@ -94,7 +94,7 @@ Log files
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
 ## Checklist for Open-MPW Submission
-Finally, you need confirm MPW ready according to [offical checklist](https://caravel-user-project.readthedocs.io/en/latest/#checklist-for-open-mpw-submission).
+Finally, you need to confirm MPW ready according to [offical checklist](https://caravel-user-project.readthedocs.io/en/latest/#checklist-for-open-mpw-submission).
 
 ## Offical Documents
 * [Quickstart of How to Use Caravel User Project](https://github.com/efabless/caravel_user_project/blob/main/docs/source/index.rst#section-quickstart)
