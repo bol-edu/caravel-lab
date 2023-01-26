@@ -20,7 +20,7 @@
 `define __USER_DEFINES_H
 
 // deliberately erroneous placeholder value; user required to config GPIO's to other
-`define GPIO_MODE_INVALID                  13'hXXXX
+`define GPIO_MODE_INVALID                  13'h0000
 
 // Authoritive source of these MODE defs is: caravel/verilog/rtl/user_defines.v
 // Useful GPIO mode values.  These match the names used in defs.h.
