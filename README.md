@@ -11,7 +11,8 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 * Ubuntu 20.04+
 * Installed Docker packages
 * Icarus Verilog [version 12.0](https://bleyer.org/icarus/)
-* Caravel user project sources with [tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
+* Caravel user project [sources with tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
+* Custom design [sources](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/)
 
 ## 1. Custom RTL design
 A GCD RTL design example was verified under Icarus Verilog version 12.0. The the following timing diagram shows GCD(10312050, 29460792)=138.
