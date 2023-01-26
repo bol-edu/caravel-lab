@@ -73,7 +73,7 @@ All Caravel flow step outputs were written to log files.
     $ SIM=GL    
     $ make verify-la_test1-gl
     
-    Run  gate level static timing verifier
+    Run gate level static timing verifier
     $ make extract-parasitics
     $ make create-spef-mapping
     $ make caravel-sta
