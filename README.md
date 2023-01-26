@@ -87,6 +87,7 @@ Log files
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
 * [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
 * [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
+* [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 
 ## Offical Documents
 * [Quickstart of How to Use Caravel User Project](https://github.com/efabless/caravel_user_project/blob/main/docs/source/index.rst#section-quickstart)
