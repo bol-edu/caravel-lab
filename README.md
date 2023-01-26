@@ -10,7 +10,7 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 ## Caravel Lab Prerequisites
 * Ubuntu 20.04+
 * Installed Docker packages
-* Icarus Verilog [version 12.0](https://bleyer.org/icarus/)
+* Icarus Verilog [version 12.0](https://bleyer.org/icarus/) bundle with GTKWave
 * Caravel user project [sources with tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
 * Custom design [sources](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/)
 
@@ -41,6 +41,7 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 * The GCD design was wrapped with logic analyzer input/output in [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v), which can be triggered by [la_test1.c](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1.c) and monitored by [la_test1_tb.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v).
+* After RTL simulation, you can find a VCD waveform file RTL-la_test1.vcd updated in ~/caravel_user_project/verilog/dv/la_test1/ and debug it with GTKWave tool.
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
 * We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip not working Openlane CVC step in Caravel flow.
 * The gate level static timing verifier is based on [OpenROAD OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA).
