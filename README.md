@@ -14,7 +14,7 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 * Caravel user project [sources with tag mpw-8c](https://github.com/efabless/caravel_user_project/tree/mpw-8c)
 * Custom design [sources](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/)
 
-## 1. Custom RTL design
+## 1. Custom RTL Design
 A GCD RTL design example was verified under Icarus Verilog version 12.0. The the following timing diagram shows GCD(10312050, 29460792)=138.
 
 <img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>
@@ -35,7 +35,7 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
     
 The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
 
-## 2. Caravel flow
+## 2. Caravel Flow
 The below instructions show Caravel flow setup and execution step-by-step with custom GCD RTL design example. 
 * If a 'volare: command not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
@@ -95,7 +95,7 @@ Make log files
 * [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
-## Caravel system sources log files
+## Caravel System Sources Log Files
 The directories caravel_user_project/caravel and xx can be saw after 'make setup'.
 * [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
 
