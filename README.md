@@ -36,14 +36,14 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
 The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
 
 ## 2. Caravel User Flow
-The below instructions show Caravel flow setup and execution step-by-step with custom GCD RTL design example. 
+The below instructions show Caravel user flow setup and execution step-by-step with custom GCD RTL design example. 
 * If a 'volare: command not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
-* The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
+* The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel user flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 * The GCD design was wrapped with logic analyzer input/output in [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v), which can be triggered by [la_test1.c](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1.c) and monitored by [la_test1_tb.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v).
 * After RTL simulation, you can find a VCD waveform file RTL-la_test1.vcd updated in ~/caravel_user_project/verilog/dv/la_test1/ and debug it with GTKWave tool.
 * Caravel SoC [memory map definition](https://github.com/efabless/caravel/blob/main/verilog/dv/caravel/defs.h) and [testbench examples](https://github.com/efabless/caravel_user_project/blob/main/verilog/dv/README.md).
-* We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip not working Openlane CVC step in Caravel flow.
+* We change default "RUN_CVC" : 1 to 0 in user project example's [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/config.json) to skip not working Openlane CVC step in Caravel user flow.
 * The gate level static timing verifier is based on [OpenROAD OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA).
 * In MPW precheck, you have to update two files to pass check (1) update README.md (>25% difference) to replace original one (2) change 13'hXXXX to 13'h0000 in user_defines.v.
 
