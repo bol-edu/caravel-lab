@@ -88,16 +88,17 @@ All Caravel flow step outputs were written to log files.
     $ make precheck
     $ make run-precheck
 
-Make log files
+Make logs
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
 * [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
 * [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
 * [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
-## Caravel System Sources Log Files
-The directories caravel_user_project/caravel and xx can be saw after 'make setup'.
+## Caravel (System Side) Verilog Sources List Logs
+The two directories caravel_user_project/caravel and caravel_user_project/mgmt_core_wrapper were created after 'Setup caravel_user_project'.
 * [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
+* [caravel_user_project.mgmt_core_wrapper.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.mgmt_core_wrapper.log)
 
 ## Checklist for Open-MPW Submission
 Finally, you need to confirm MPW ready according [offical checklist](https://caravel-user-project.readthedocs.io/en/latest/#checklist-for-open-mpw-submission).
