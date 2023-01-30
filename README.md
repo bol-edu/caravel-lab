@@ -5,7 +5,7 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 
 ## Caravel Lab Purpose
 * Integrate a custom RTL design to Caravel SoC
-* Go through overall Caravel flow and ready to [MPW submission](https://efabless.com/open_shuttle_program)
+* Go through overall Caravel user flow and ready to [MPW submission](https://efabless.com/open_shuttle_program)
 
 ## Caravel Lab Prerequisites
 * Ubuntu 20.04+
@@ -35,7 +35,7 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The the
     
 The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
 
-## 2. Caravel Flow
+## 2. Caravel User Flow
 The below instructions show Caravel flow setup and execution step-by-step with custom GCD RTL design example. 
 * If a 'volare: command not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
@@ -47,7 +47,7 @@ The below instructions show Caravel flow setup and execution step-by-step with c
 * The gate level static timing verifier is based on [OpenROAD OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA).
 * In MPW precheck, you have to update two files to pass check (1) update README.md (>25% difference) to replace original one (2) change 13'hXXXX to 13'h0000 in user_defines.v.
 
-All Caravel flow step outputs were written to log files.
+All Caravel user flow step outputs were written to log files.
     
     Setup caravel_user_project    
     $ git clone -b mpw-8c https://github.com/efabless/caravel_user_project
@@ -88,14 +88,14 @@ All Caravel flow step outputs were written to log files.
     $ make precheck
     $ make run-precheck
 
-Make logs
+Caravel user flow step logs
 * [setup-caravel_user_project.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/setup-caravel_user_project.log)
 * [run-rtl-simulation.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-rtl-simulation.log)
 * [run-openlane-to-generate-rtl-netlist.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-openlane-to-generate-rtl-netlist.log)
 * [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
-## Caravel (System Side) Verilog Sources List Logs
+## Lists for Caravel (System Side) Verilog Sources
 The two directories caravel_user_project/caravel and caravel_user_project/mgmt_core_wrapper were created after 'Setup caravel_user_project'.
 * [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
 * [caravel_user_project.mgmt_core_wrapper.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.mgmt_core_wrapper.log)
