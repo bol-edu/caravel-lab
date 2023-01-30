@@ -95,7 +95,7 @@ Caravel user flow step logs
 * [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
-## Lists for Caravel (System Side) Verilog Sources
+## List all Verilog Sources in Caravel (System Side) 
 The two directories caravel_user_project/caravel and caravel_user_project/mgmt_core_wrapper were created after 'Setup caravel_user_project'.
 * [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
 * [caravel_user_project.mgmt_core_wrapper.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.mgmt_core_wrapper.log)
