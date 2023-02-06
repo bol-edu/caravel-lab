@@ -15,7 +15,7 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 * Custom design [sources](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/)
 
 ## 1. Custom RTL Design
-A GCD RTL design example was verified under Icarus Verilog version 12.0. The the following timing diagram shows GCD(10312050, 29460792)=138.
+A GCD RTL design example was verified under Icarus Verilog version 12.0. The following timing diagram shows GCD(10312050, 29460792)=138.
 
 <img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>
 
