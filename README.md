@@ -100,10 +100,11 @@ The two directories caravel_user_project/caravel and caravel_user_project/mgmt_c
 * [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
 * [caravel_user_project.mgmt_core_wrapper.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.mgmt_core_wrapper.log)
 
-## Checklist for Open-MPW Submission & Public Project
+## Checklist for Open-MPW Submission & MPW Public Project
 Finally, you need to comply with [offical checklist](https://caravel-user-project.readthedocs.io/en/latest/#checklist-for-open-mpw-submission) to upload your [MPW public project](https://platform.efabless.com/shuttles/MPW-8#projects_list).
 
 ## Offical Documents
 * [Quickstart of How to Use Caravel User Project](https://github.com/efabless/caravel_user_project/blob/main/docs/source/index.rst#section-quickstart)
 * [Caravel User Project](https://caravel-user-project.readthedocs.io/en/latest/#caravel-user-project)
 * [Efabless Caravel “harness” SoC](https://caravel-harness.readthedocs.io/en/latest/#efabless-caravel-harness-soc)
+* [Efabless Caravel Specification](https://github.com/efabless/caravel/tree/main/docs/pdf)
