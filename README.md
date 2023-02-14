@@ -56,6 +56,7 @@ All Caravel user flow step outputs were written to log files.
     $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
     $ export PDK_ROOT=$(pwd)/dependencies/pdks
     $ export PDK=sky130A
+    $ export PATH=$PATH:~/.local/bin
     $ make setup
     
     Run RTL simulation
