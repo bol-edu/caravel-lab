@@ -60,15 +60,15 @@ All Caravel user flow step outputs were written to log files.
     $ make setup
     
     Run RTL simulation
-    $ cp ~/caravel-lab/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
-    $ cp ~/caravel-lab/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
-    $ cp ~/caravel-lab/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
+    $ cp ~/caravel-lab-main/custom_design/gcd/user_proj_example/user_proj_example.v ~/caravel_user_project/verilog/rtl/user_proj_example.v
+    $ cp ~/caravel-lab-main/custom_design/gcd/verify-la_test1-rtl/la_test1.c ~/caravel_user_project/verilog/dv/la_test1/la_test1.c
+    $ cp ~/caravel-lab-main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v ~/caravel_user_project/verilog/dv/la_test1/la_test1_tb.v
     $ make simenv
     $ SIM=RTL
     $ make verify-la_test1-rtl
     
     Run Openlane to generate RTL netlist
-    $ cp ~/caravel-lab/custom_design/gcd/user_proj_example/config.json ~/caravel_user_project/openlane/user_proj_example/config.json
+    $ cp ~/caravel-lab-main/custom_design/gcd/user_proj_example/config.json ~/caravel_user_project/openlane/user_proj_example/config.json
     $ cd openlane
     $ make user_proj_example
     $ make user_project_wrapper
@@ -84,8 +84,8 @@ All Caravel user flow step outputs were written to log files.
     $ make caravel-sta
     
     Run MPW precheck
-    $ cp ~/caravel-lab/custom_design/gcd/mpw_precheck/README.md ~/caravel_user_project/README.md
-    $ cp ~/caravel-lab/custom_design/gcd/mpw_precheck/user_defines.v  ~/caravel_user_project/verilog/rtl/user_defines.v
+    $ cp ~/caravel-lab-main/custom_design/gcd/mpw_precheck/README.md ~/caravel_user_project/README.md
+    $ cp ~/caravel-lab-main/custom_design/gcd/mpw_precheck/user_defines.v  ~/caravel_user_project/verilog/rtl/user_defines.v
     $ make precheck
     $ make run-precheck
 
