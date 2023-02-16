@@ -37,7 +37,7 @@ The GCD design and testbench sources located in [custom_design/gcd/source](https
 
 ## 2. Caravel User Flow
 The below instructions show Caravel user flow setup and execution step-by-step with custom GCD RTL design example. 
-* If a 'volare: command not found' is happened during Caravel setup, reference the offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
+* Execute 'export PATH=$PATH:~/.local/bin' before first time 'make setup'. This is a 'volare: command not found' issue refered from offical [troubleshooting](https://github.com/efabless/volare#troubleshooting).
 * The three variables OPENLANE_ROOT, PDK_ROOT and PDK always are needed to export before Caravel user flow execution. In Caravel lab, you need to change directory to ~/caravel_user_project firstly and then export the three variables.
 * Download [custom_design](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd) to your experimental environment.
 * The GCD design was wrapped with logic analyzer input/output in [user_proj_example.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/user_proj_example/user_proj_example.v), which can be triggered by [la_test1.c](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1.c) and monitored by [la_test1_tb.v](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/verify-la_test1-rtl/la_test1_tb.v).
@@ -55,8 +55,7 @@ All Caravel user flow step outputs were written to log files.
     $ mkdir dependencies
     $ export OPENLANE_ROOT=$(pwd)/dependencies/openlane_src
     $ export PDK_ROOT=$(pwd)/dependencies/pdks
-    $ export PDK=sky130A
-    $ export PATH=$PATH:~/.local/bin
+    $ export PDK=sky130A    
     $ make setup
     
     Run RTL simulation
