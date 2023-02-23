@@ -95,11 +95,6 @@ Caravel user flow step logs
 * [run-gate-level-static-timing-verifier.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-gate-level-static-timing-verifier.log)
 * [run-mpw-precheck.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/run-mpw-precheck.log)
 
-## List all Verilog Sources in Caravel (System Side) 
-The two directories caravel_user_project/caravel and caravel_user_project/mgmt_core_wrapper were created after 'Setup caravel_user_project'.
-* [caravel_user_project.caravel.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.caravel.log)
-* [caravel_user_project.mgmt_core_wrapper.log](https://github.com/bol-edu/caravel-lab/blob/main/logs/caravel_user_project.mgmt_core_wrapper.log)
-
 ## Checklist for Open-MPW Submission & MPW Public Project
 Finally, you need to comply with [offical checklist](https://caravel-user-project.readthedocs.io/en/latest/#checklist-for-open-mpw-submission) to upload your [MPW public project](https://platform.efabless.com/shuttles/MPW-8#projects_list).
 
