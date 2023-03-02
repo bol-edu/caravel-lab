@@ -32,7 +32,7 @@ The design example was verified under Icarus Verilog and GTKWave.
     > finish
     ** Continue **
     
-We use GTKWave to read signals save file from dump.vcd (produced after iverilog simulation). The following timing diagram shows GCD(10312050, 29460792)=138
+We use GTKWave to read saved signals (golden.gtkw) from dump.vcd. The following timing diagram shows GCD(10312050, 29460792)=138
 
     $ gtkwave golden.gtkw
 
