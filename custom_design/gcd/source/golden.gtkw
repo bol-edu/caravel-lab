@@ -1,0 +1,29 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Sun Jan 22 07:54:01 2023
+[*]
+[dumpfile] "C:\Users\Kevin Jan\Dropbox\基金會事項\技術.Openlane&Caravel\example.seq_gcd\v2.rewrite.testbench\dump.vcd"
+[dumpfile_mtime] "Sat Jan 21 03:02:28 2023"
+[dumpfile_size] 13998
+[savefile] "C:\Users\Kevin Jan\Dropbox\基金會事項\技術.Openlane&Caravel\example.seq_gcd\v2.rewrite.testbench\golden.gtkw"
+[timestart] 72
+[size] 1536 793
+[pos] -113 -113
+*-3.000000 87 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tb_seq_gcd.
+[sst_width] 197
+[signals_width] 217
+[sst_expanded] 1
+[sst_vpaned_height] 221
+@28
+tb_seq_gcd.DUT.clk
+tb_seq_gcd.DUT.rst_n
+tb_seq_gcd.DUT.load_i
+@24
+tb_seq_gcd.DUT.a_i[31:0]
+tb_seq_gcd.DUT.b_i[31:0]
+tb_seq_gcd.DUT.gcd_o[31:0]
+@29
+tb_seq_gcd.DUT.done_o
+[pattern_trace] 1
+[pattern_trace] 0
