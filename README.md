@@ -32,13 +32,13 @@ The design example was verified under Icarus Verilog and GTKWave.
     > finish
     ** Continue **
     
-We use GTKWave to read GTKWave signals save file and dump.vcd (produced after iverilog simulation). The following timing diagram shows GCD(10312050, 29460792)=138
+We use GTKWave to read signals save file from dump.vcd (produced after iverilog simulation). The following timing diagram shows GCD(10312050, 29460792)=138
 
     $ gtkwave golden.gtkw
 
 <img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>    
 
-GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
+Further, GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
 
 ## 2. Caravel User Flow
 The below instructions show Caravel user flow setup and execution step-by-step with custom GCD RTL design example. 
