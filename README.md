@@ -15,9 +15,8 @@ The Efabless Caravel chip is a ready-to-use test harness for creating designs wi
 * Download and unzip [caravel lab data](https://github.com/bol-edu/caravel-lab/archive/refs/heads/main.zip)
 
 ## 1. Custom RTL Design
-A GCD RTL design example was verified under Icarus Verilog version 12.0. The following timing diagram shows GCD(10312050, 29460792)=138.
-
-<img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>
+A GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). 
+The design example was verified under Icarus Verilog and GTKWave.
 
     $ iverilog seq_gcd.v testbench.v  && vvp a.out
     VCD info: dumpfile dump.vcd opened for output.
@@ -33,7 +32,13 @@ A GCD RTL design example was verified under Icarus Verilog version 12.0. The fol
     > finish
     ** Continue **
     
-The GCD design and testbench sources located in [custom_design/gcd/source](https://github.com/bol-edu/caravel-lab/tree/main/custom_design/gcd/source). GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
+We use GTKWave to read GTKWave signals save file and dump.vcd (produced after iverilog simulation). The following timing diagram shows GCD(10312050, 29460792)=138
+
+    $ gtkwave golden.gtkw
+
+<img src="https://user-images.githubusercontent.com/11850122/214568278-017816f2-8450-483e-878f-8cbccd79d248.png" width=100%>    
+
+GCD's Openlane configuration file [config.json](https://github.com/bol-edu/caravel-lab/blob/main/custom_design/gcd/openlane_config/config.json) was tested under individual [Openlane flow](https://github.com/bol-edu/openlane-lab) with PDK sky130_fd_sc_hd and clock period 80 ns.
 
 ## 2. Caravel User Flow
 The below instructions show Caravel user flow setup and execution step-by-step with custom GCD RTL design example. 
