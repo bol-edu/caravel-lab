@@ -1,31 +1,283 @@
-hls05@HLS05:~/caravel_user_project$ SIM=GL
-hls05@HLS05:~/caravel_user_project$ make verify-la_test1-gl
-docker pull efabless/dv:latest
-latest: Pulling from efabless/dv
-Digest: sha256:06497b070c8578fbbe87170c9f4dfa61c2c9a9d9f665a637c4d822ea98a7f1b7
-Status: Image is up to date for efabless/dv:latest
-docker.io/efabless/dv:latest
-docker run -v /home/hls05/caravel_user_project:/home/hls05/caravel_user_project -v /home/hls05/caravel_user_project/dependencies/pdks:/home/hls05/caravel_user_project/dependencies/pdks -v /home/hls05/caravel_user_project/caravel:/home/hls05/caravel_user_project/caravel -e TARGET_PATH=/home/hls05/caravel_user_project -e PDK_ROOT=/home/hls05/caravel_user_project/dependencies/pdks -e CARAVEL_ROOT=/home/hls05/caravel_user_project/caravel -e TOOLS=/foss/tools/riscv-gnu-toolchain-rv32i/217e7f3debe424d61374d31e33a091a630535937 -e DESIGNS=/home/hls05/caravel_user_project -e USER_PROJECT_VERILOG=/home/hls05/caravel_user_project/verilog -e PDK=sky130A -e CORE_VERILOG_PATH=/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog -e CARAVEL_VERILOG_PATH=/home/hls05/caravel_user_project/caravel/verilog -e MCW_ROOT=/home/hls05/caravel_user_project/mgmt_core_wrapper -u $(id -u $USER):$(id -g $USER) efabless/dv:latest sh -c "source ~/.bashrc && cd /home/hls05/caravel_user_project/verilog/dv/la_test1 && export SIM=GL && make"
-iverilog -Ttyp -DFUNCTIONAL -DGL -DSIM -DUSE_POWER_PINS -DUNIT_DELAY=#1 \
-        -f/home/hls05/caravel_user_project/mgmt_core_wrapper/verilog/includes/includes.gl.caravel \
-        -f/home/hls05/caravel_user_project/verilog/includes/includes.gl.caravel_user_project -o la_test1.vvp la_test1_tb.v
-/home/hls05/caravel_user_project/caravel/verilog/gl/caravel.v:4988: warning: input port clock is coerced to inout.
-vvp  la_test1.vvp
-Reading la_test1.hex
-la_test1.hex loaded into memory
-Memory 5 bytes = 0x6f 0x00 0x00 0x0b 0x13
-FST info: dumpfile la_test1.vcd opened for output.
-LA Test seq_gcd(10312050, 29460792)=138 started
-LA Test seq_gcd(10312050, 29460792)=138 passed
-LA Test seq_gcd(1993627629, 1177417612)=7 started
-LA Test seq_gcd(1993627629, 1177417612)=7 passed
-LA Test seq_gcd(2097015289, 3812041926)=1 started
-LA Test seq_gcd(2097015289, 3812041926)=1 passed
-LA Test seq_gcd(1924134885, 3151131255)=135 started
-LA Test seq_gcd(1924134885, 3151131255)=135 passed
-LA Test seq_gcd(992211318, 512609597)=1 started
-LA Test seq_gcd(992211318, 512609597)=1 passed
-la_test1_tb.v:189: $finish called at 2569614500 (1ps)
-mv la_test1.vcd GL-la_test1.vcd
-rm la_test1.vvp
-hls05@HLS05:~/caravel_user_project$ 
+hls05@HLS05:~/caravel_user_project$ cp ~/custom_design/gcd/user_proj_example/config.json ~/caravel_user_project/openlane/user_proj_example/config.json
+hls05@HLS05:~/caravel_user_project$ cd openlane/
+hls05@HLS05:~/caravel_user_project/openlane$ make user_proj_example
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+# user_proj_example
+mkdir -p ./user_proj_example/runs/23_01_26_00_30
+rm -rf ./user_proj_example/runs/user_proj_example
+ln -s $(realpath ./user_proj_example/runs/23_01_26_00_30) ./user_proj_example/runs/user_proj_example
+docker run -it -v $(realpath /home/hls05/caravel_user_project/openlane/..):$(realpath /home/hls05/caravel_user_project/openlane/..) -v /home/hls05/caravel_user_project/dependencies/pdks:/home/hls05/caravel_user_project/dependencies/pdks -v : -v /home/hls05/caravel_user_project/dependencies/openlane_src:/openlane -e PDK_ROOT=/home/hls05/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT= -e OPENLANE_RUN_TAG=23_01_26_00_30 -u 1000:1000 \
+        efabless/openlane:2022.10.20 sh -c "flow.tcl -design $(realpath ./user_proj_example) -save_path $(realpath ..) -save -tag 23_01_26_00_30 -overwrite -ignore_mismatches"
+Unable to find image 'efabless/openlane:2022.10.20' locally
+2022.10.20: Pulling from efabless/openlane
+2d473b07cdd5: Already exists
+e23e0ddb585d: Already exists
+6288ff22c326: Already exists
+4273e1cebc47: Already exists
+00da99f6da93: Already exists
+d4d650a92807: Already exists
+5c2567a679fb: Already exists
+2fe7c73cb171: Already exists
+4a454693240e: Already exists
+a7cc087578da: Already exists
+584123e8c8f8: Pull complete
+1203a0766b07: Pull complete
+fa8650bb585d: Pull complete
+434f2024de16: Pull complete
+54e9f19f15f6: Pull complete
+156983214a99: Pull complete
+32cb78711940: Pull complete
+743de2732deb: Pull complete
+69bd41703be8: Pull complete
+882d00e6d13b: Pull complete
+bb5554547349: Pull complete
+c8b3149fb0c4: Pull complete
+214d9d031286: Pull complete
+1a687139d67e: Pull complete
+dfb063db8fd2: Pull complete
+ac16a83e4128: Pull complete
+e32c362a3299: Pull complete
+5de5a9fe7a12: Pull complete
+a1972ffb6704: Pull complete
+4f4fb700ef54: Pull complete
+Digest: sha256:5fa3052e5f1c106a36a7667eb567fd848fee06e6400707deefc915e3ab5aeb58
+Status: Downloaded newer image for efabless/openlane:2022.10.20
+OpenLane daae2154590cf20e0c20b77e3fc02b6526ad09af
+(with mounted scripts from cb59d1f84deb5cedbb5b0a3e3f3b4129a967c988)
+All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
+Available under the Apache License, version 2.0. See the LICENSE file for more details.
+
+[WARNING]: OpenLane may not function properly: The version of open_pdks used in building the PDK does not match the version OpenLane was tested on (installed: 0059588eebfc704681dc2368bd1d33d96281d10f, tested: 3af133706e554a740cfe60f21e773d9eaa41838c)
+This may introduce some issues. You may want to re-install the PDK by invoking `make pdk`.
+Tool cvc_rv is required by the flow scripts being used, but appears to not be installed in the environment.
+Tool cvc is installed in the environment, but has no corresponding entry in the flow scripts.
+The version of netgen installed in the environment does not match the one required by the OpenLane flow scripts (installed: 3aeea9d1642c8d87911ed13626c77e4888caa9eb, expected: 2292ab813b54cc6d6fa41368c4e0e7492fb627c9)
+The version of yosys installed in the environment does not match the one required by the OpenLane flow scripts (installed: 6e907acf86d9ff0edd9a1c10274e62690e19e939, expected: f109fa3d4c56fe33bc626c298e04d45ae510dd0e)
+The version of openroad_app installed in the environment does not match the one required by the OpenLane flow scripts (installed: 389a1f09821c0f57e3bf8e88f4ab43c76ec5f5c4, expected: 7f00621cb612fd94e15b35790afe744c89d433a7)
+[INFO]: Using configuration in '../home/hls05/caravel_user_project/openlane/user_proj_example/config.json'...
+[INFO]: PDK Root: /home/hls05/caravel_user_project/dependencies/pdks
+[INFO]: Process Design Kit: sky130A
+[INFO]: Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Run Directory: /home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30
+[INFO]: Preparing LEF files for the nom corner...
+[INFO]: Preparing LEF files for the min corner...
+[INFO]: Preparing LEF files for the max corner...
+[STEP 1]
+[INFO]: Running Synthesis (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/synthesis/1-synthesis.log)...
+[STEP 2]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/synthesis/2-sta.log)...
+[STEP 3]
+[INFO]: Running Initial Floorplanning (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/floorplan/3-initial_fp.log)...
+[INFO]: Floorplanned with width 888.72 and height 576.64.
+[STEP 4]
+[INFO]: Running IO Placement (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/floorplan/4-place_io.log)...
+[STEP 5]
+[INFO]: Running Tap/Decap Insertion (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/floorplan/5-tap.log)...
+[INFO]: Power planning with power {vccd1} and ground {vssd1}...
+[STEP 6]
+[INFO]: Generating PDN (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/floorplan/6-pdn.log)...
+[STEP 7]
+[INFO]: Running Global Placement (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/placement/7-global.log)...
+[STEP 8]
+[INFO]: Running Placement Resizer Design Optimizations (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/placement/8-resizer.log)...
+[STEP 9]
+[INFO]: Running Detailed Placement (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/placement/9-detailed.log)...
+[STEP 10]
+[INFO]: Running Clock Tree Synthesis (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/cts/10-cts.log)...
+[STEP 11]
+[INFO]: Running Placement Resizer Timing Optimizations (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/cts/11-resizer.log)...
+[STEP 12]
+[INFO]: Running Global Routing Resizer Timing Optimizations (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/12-resizer.log)...
+[STEP 13]
+[INFO]: Running Diode Insertion (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/13-diodes.log)...
+[STEP 14]
+[INFO]: Running Detailed Placement (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/14-diode_legalization.log)...
+[STEP 15]
+[INFO]: Running Fill Insertion (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/15-fill.log)...
+[STEP 16]
+[INFO]: Running Global Routing (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/16-global.log)...
+[STEP 17]
+[INFO]: Writing Verilog (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/16-global_write_netlist.log)...
+[STEP 18]
+[INFO]: Running Detailed Routing (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/18-detailed.log)...
+[INFO]: No DRC violations after detailed routing.
+[STEP 19]
+[INFO]: Checking Wire Lengths (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/routing/19-wire_lengths.log)...
+[STEP 20]
+[INFO]: Running SPEF Extraction at the min process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/20-parasitics_extraction.min.log)...
+[STEP 21]
+[INFO]: Running Multi-Corner Static Timing Analysis at the min process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/21-rcx_mcsta.min.log)...
+[STEP 22]
+[INFO]: Running SPEF Extraction at the max process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/22-parasitics_extraction.max.log)...
+[STEP 23]
+[INFO]: Running Multi-Corner Static Timing Analysis at the max process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/23-rcx_mcsta.max.log)...
+[STEP 24]
+[INFO]: Running SPEF Extraction at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/24-parasitics_extraction.nom.log)...
+[STEP 25]
+[INFO]: Running Multi-Corner Static Timing Analysis at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/25-rcx_mcsta.nom.log)...
+[STEP 26]
+[INFO]: Running Single-Corner Static Timing Analysis at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/26-rcx_sta.log)...
+[STEP 27]
+[INFO]: Creating IR Drop Report (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/27-irdrop.log)...
+[STEP 28]
+[INFO]: Running Magic to generate various views...
+[INFO]: Streaming out GDSII with Magic (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/28-gdsii.log)...
+[INFO]: Generating MAGLEF views...
+[STEP 29]
+[INFO]: Streaming out GDSII with KLayout (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/29-gdsii-klayout.log)...
+[STEP 30]
+[INFO]: Running XOR on the layouts using KLayout (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/30-xor.log)...
+[STEP 31]
+[INFO]: Running Magic Spice Export from LEF (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/31-spice.log)...
+[STEP 32]
+[INFO]: Writing Powered Verilog (logs: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/32-write_powered_def.log, ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/32-write_powered_verilog.log)...
+[STEP 33]
+[INFO]: Writing Verilog (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/32-write_powered_verilog.log)...
+[STEP 34]
+[INFO]: Running LVS (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/34-lvs.lef.log)...
+[STEP 35]
+[INFO]: Running Magic DRC (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/35-drc.log)...
+[INFO]: Converting Magic DRC database to various tool-readable formats...
+[INFO]: No DRC violations after GDS streaming out.
+[STEP 36]
+[INFO]: Running OpenROAD Antenna Rule Checker (log: ../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/logs/signoff/36-antenna.log)...
+[INFO]: Saving current set of views in '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/results/final'...
+[INFO]: Saving current set of views in '../home/hls05/caravel_user_project'...
+[INFO]: Saving runtime environment...
+[INFO]: Generating final set of reports...
+[INFO]: Created manufacturability report at '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/manufacturability.rpt'.
+[INFO]: Created metrics report at '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/metrics.csv'.
+[WARNING]: There are max slew violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+[WARNING]: There are max fanout violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+[WARNING]: There are max capacitance violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+[INFO]: There are no hold violations in the design at the typical corner.
+[INFO]: There are no setup violations in the design at the typical corner.
+[SUCCESS]: Flow complete.
+[INFO]: Note that the following warnings have been generated:
+[WARNING]: There are max slew violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+[WARNING]: There are max fanout violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+[WARNING]: There are max capacitance violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_proj_example/runs/23_01_26_00_30/reports/signoff/26-rcx_sta.slew.rpt'.
+
+hls05@HLS05:~/caravel_user_project/openlane$ make user_project_wrapper
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+Makefile:73: warning: undefined variable 'CARAVEL_ROOT'
+# user_project_wrapper
+mkdir -p ./user_project_wrapper/runs/23_01_26_00_44
+rm -rf ./user_project_wrapper/runs/user_project_wrapper
+ln -s $(realpath ./user_project_wrapper/runs/23_01_26_00_44) ./user_project_wrapper/runs/user_project_wrapper
+docker run -it -v $(realpath /home/hls05/caravel_user_project/openlane/..):$(realpath /home/hls05/caravel_user_project/openlane/..) -v /home/hls05/caravel_user_project/dependencies/pdks:/home/hls05/caravel_user_project/dependencies/pdks -v : -v /home/hls05/caravel_user_project/dependencies/openlane_src:/openlane -e PDK_ROOT=/home/hls05/caravel_user_project/dependencies/pdks -e PDK=sky130A -e MISMATCHES_OK=1 -e CARAVEL_ROOT= -e OPENLANE_RUN_TAG=23_01_26_00_44 -u 1000:1000 \
+        efabless/openlane:2022.10.20 sh -c "flow.tcl -design $(realpath ./user_project_wrapper) -save_path $(realpath ..) -save -tag 23_01_26_00_44 -overwrite -ignore_mismatches"
+OpenLane daae2154590cf20e0c20b77e3fc02b6526ad09af
+(with mounted scripts from cb59d1f84deb5cedbb5b0a3e3f3b4129a967c988)
+All rights reserved. (c) 2020-2022 Efabless Corporation and contributors.
+Available under the Apache License, version 2.0. See the LICENSE file for more details.
+
+[WARNING]: OpenLane may not function properly: The version of open_pdks used in building the PDK does not match the version OpenLane was tested on (installed: 0059588eebfc704681dc2368bd1d33d96281d10f, tested: 3af133706e554a740cfe60f21e773d9eaa41838c)
+This may introduce some issues. You may want to re-install the PDK by invoking `make pdk`.
+Tool cvc_rv is required by the flow scripts being used, but appears to not be installed in the environment.
+Tool cvc is installed in the environment, but has no corresponding entry in the flow scripts.
+The version of netgen installed in the environment does not match the one required by the OpenLane flow scripts (installed: 3aeea9d1642c8d87911ed13626c77e4888caa9eb, expected: 2292ab813b54cc6d6fa41368c4e0e7492fb627c9)
+The version of yosys installed in the environment does not match the one required by the OpenLane flow scripts (installed: 6e907acf86d9ff0edd9a1c10274e62690e19e939, expected: f109fa3d4c56fe33bc626c298e04d45ae510dd0e)
+The version of openroad_app installed in the environment does not match the one required by the OpenLane flow scripts (installed: 389a1f09821c0f57e3bf8e88f4ab43c76ec5f5c4, expected: 7f00621cb612fd94e15b35790afe744c89d433a7)
+[INFO]: Using configuration in '../home/hls05/caravel_user_project/openlane/user_project_wrapper/config.json'...
+[INFO]: PDK Root: /home/hls05/caravel_user_project/dependencies/pdks
+[INFO]: Process Design Kit: sky130A
+[INFO]: Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Optimization Standard Cell Library: sky130_fd_sc_hd
+[INFO]: Run Directory: /home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44
+[INFO]: Preparing LEF files for the nom corner...
+[INFO]: Preparing LEF files for the min corner...
+[INFO]: Preparing LEF files for the max corner...
+[STEP 1]
+[INFO]: Running Synthesis (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/synthesis/1-synthesis.log)...
+[STEP 2]
+[INFO]: Running Single-Corner Static Timing Analysis (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/synthesis/2-sta.log)...
+[INFO]: Creating a netlist with power/ground pins.
+[STEP 3]
+[INFO]: Running Initial Floorplanning (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/floorplan/3-initial_fp.log)...
+[INFO]: Floorplanned with width 2908.58 and height 3497.92.
+[STEP 4]
+[INFO]: Running IO Placement...
+[INFO]: Applying DEF template...
+[STEP 5]
+[INFO]: Performing Manual Macro Placement (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/placement/5-macro_placement.log)...
+[INFO]: Power planning with power {vccd1 vccd2 vdda1 vdda2} and ground {vssd1 vssd2 vssa1 vssa2}...
+[STEP 6]
+[INFO]: Generating PDN (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/floorplan/6-pdn.log)...
+[STEP 7]
+[INFO]: Performing Random Global Placement (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/placement/7-global.log)...
+[INFO]: Skipping Placement Resizer Design Optimizations.
+[STEP 8]
+[INFO]: Running Detailed Placement (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/placement/8-detailed.log)...
+[INFO]: Skipping Placement Resizer Timing Optimizations.
+[STEP 9]
+[INFO]: Running Global Routing Resizer Timing Optimizations (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/9-resizer.log)...
+[STEP 10]
+[INFO]: Running Detailed Placement (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/10-diode_legalization.log)...
+[STEP 11]
+[INFO]: Running Global Routing (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/11-global.log)...
+[STEP 12]
+[INFO]: Writing Verilog (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/11-global_write_netlist.log)...
+[STEP 13]
+[INFO]: Running Detailed Routing (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/13-detailed.log)...
+[INFO]: No DRC violations after detailed routing.
+[STEP 14]
+[INFO]: Checking Wire Lengths (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/routing/14-wire_lengths.log)...
+[STEP 15]
+[INFO]: Running SPEF Extraction at the min process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/15-parasitics_extraction.min.log)...
+[STEP 16]
+[INFO]: Running Multi-Corner Static Timing Analysis at the min process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/16-rcx_mcsta.min.log)...
+[STEP 17]
+[INFO]: Running SPEF Extraction at the max process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/17-parasitics_extraction.max.log)...
+[STEP 18]
+[INFO]: Running Multi-Corner Static Timing Analysis at the max process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/18-rcx_mcsta.max.log)...
+[STEP 19]
+[INFO]: Running SPEF Extraction at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/19-parasitics_extraction.nom.log)...
+[STEP 20]
+[INFO]: Running Multi-Corner Static Timing Analysis at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/20-rcx_mcsta.nom.log)...
+[STEP 21]
+[INFO]: Running Single-Corner Static Timing Analysis at the nom process corner (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/21-rcx_sta.log)...
+[STEP 22]
+[INFO]: Creating IR Drop Report (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/22-irdrop.log)...
+[STEP 23]
+[INFO]: Running Magic to generate various views...
+[INFO]: Streaming out GDSII with Magic (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/23-gdsii.log)...
+[INFO]: Generating MAGLEF views...
+[STEP 24]
+[INFO]: Streaming out GDSII with KLayout (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/24-gdsii-klayout.log)...
+[STEP 25]
+[INFO]: Running XOR on the layouts using KLayout (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/25-xor.log)...
+[STEP 26]
+[INFO]: Running Magic Spice Export from LEF (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/26-spice.log)...
+[STEP 27]
+[INFO]: Writing Powered Verilog (logs: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/27-write_powered_def.log, ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/27-write_powered_verilog.log)...
+[STEP 28]
+[INFO]: Writing Verilog (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/27-write_powered_verilog.log)...
+[STEP 29]
+[INFO]: Running LVS (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/29-lvs.lef.log)...
+[STEP 30]
+[INFO]: Running Magic DRC (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/30-drc.log)...
+[INFO]: Converting Magic DRC database to various tool-readable formats...
+[INFO]: No DRC violations after GDS streaming out.
+[STEP 31]
+[INFO]: Running OpenROAD Antenna Rule Checker (log: ../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/logs/signoff/31-antenna.log)...
+[INFO]: Saving current set of views in '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/results/final'...
+[INFO]: Saving current set of views in '../home/hls05/caravel_user_project'...
+[INFO]: Saving runtime environment...
+[INFO]: Generating final set of reports...
+[INFO]: Created manufacturability report at '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/manufacturability.rpt'.
+[INFO]: Created metrics report at '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/metrics.csv'.
+[WARNING]: There are max slew violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/signoff/21-rcx_sta.slew.rpt'.
+[WARNING]: There are max capacitance violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/signoff/21-rcx_sta.slew.rpt'.
+[INFO]: There are no hold violations in the design at the typical corner.
+[INFO]: There are no setup violations in the design at the typical corner.
+[SUCCESS]: Flow complete.
+[INFO]: Note that the following warnings have been generated:
+[WARNING]: There are max slew violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/signoff/21-rcx_sta.slew.rpt'.
+[WARNING]: There are max capacitance violations in the design at the typical corner. Please refer to '../home/hls05/caravel_user_project/openlane/user_project_wrapper/runs/23_01_26_00_44/reports/signoff/21-rcx_sta.slew.rpt'.
+
+hls05@HLS05:~/caravel_user_project/openlane$
