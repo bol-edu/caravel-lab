@@ -77,6 +77,7 @@ All Caravel user flow step outputs were written to log files.
     $ make user_proj_example
     $ make user_project_wrapper
     
+    $ cd ..
     Run gate level simulation (it will take 2~3 hours@i9/64GB)
     $ SIM=GL    
     $ make verify-la_test1-gl
